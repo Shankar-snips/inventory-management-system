@@ -1,0 +1,92 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.label {
+  width: 200px;
+  font-weight: bold;
+}
+
+.inputBox {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submitButton {
+  align-self: flex-start;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.dataTable th,
+.dataTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.dataTable th {
+  background-color: #f2f2f2;
+}
+
+.dataTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dataTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.editButton,
+.deleteButton {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.editButton {
+  background-color: #28a745;
+}
+
+.editButton:hover {
+  background-color: #218838;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
