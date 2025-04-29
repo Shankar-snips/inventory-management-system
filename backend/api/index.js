@@ -18,14 +18,20 @@ const app = express();
 
 // Configure CORS with credentials
 const corsOptions = {
-    origin: process.env.NODE_ENV === "production" ? process.env.FRONTEND_URL : "http://localhost:3000",
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
-  };
-  
-  app.use(cors(corsOptions));
-  
+    credentials: true, // This is important for credentials to be passed (cookies, tokens)
+};
+
+if (process.env.NODE_ENV === "production") {
+    corsOptions.origin = process.env.FRONTEND_URL // Replace with your frontend domain
+} else {
+    corsOptions.origin = 'http://localhost:3000';
+}
+
+// Enable cors
+app.use(cors(corsOptions));
+
 // Middlewares
 app.use(express.json());
 app.use(cookieParser());
@@ -62,3 +68,5 @@ mongoose
     .catch((err) => {
         console.log(err);
     })
+
+module.exports = app;
